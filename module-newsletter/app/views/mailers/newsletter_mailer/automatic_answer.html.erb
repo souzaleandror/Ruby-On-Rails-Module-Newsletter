@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= t('.hi') %> <%= @newsletter.name %>,</h1>
+    <p>
+      <%= t('.thank_you_for_message') %>.
+    </p>
+    <p>
+      <%= t('.we_will_respond_as_soon_as_possible') %>
+    </p>
+    <p style="text-decoration: none; cursor: pointer;">
+      <%= link_to root_url, {:style => 'text-decoration: none; cursor: pointer;'} do %>
+        Module Newsletter
+      <% end %>
+    </p>
+  </body>
+</html>

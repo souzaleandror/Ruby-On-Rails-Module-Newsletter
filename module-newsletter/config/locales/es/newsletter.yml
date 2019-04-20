@@ -1,0 +1,41 @@
+# encoding: utf-8
+es:
+  home:
+    index:
+      newsletter: "Contat"
+      p_name: "Nombre"
+      p_email: "Email"
+      p_phone: "Teléfono"
+      p_subject: "Asunto"
+      p_message: "Mensaje"
+      register_newsletter: "Registrarse Newsletter"
+      accepted: "Aceptado"
+      term_newsletter: "Término de newslettero"
+      send: "Enviar"
+    create_newsletter:
+      thank_you_for_message: "Gracias por tu mensaje"
+      we_will_respond_as_soon_as_possible: "Le responderemos lo antes posible"
+      fail_send_your_message: "No enviar su mensaje"
+      try_again_later: "Inténtalo de nuevo más tarde"
+  helpers:
+    label:
+      newsletter:
+        name: "Nombre"
+        email: "Email"
+        phone: "Teléfono"
+        subject: "Asunto"
+        message: "Mensaje"
+        newsletter: "Registrarse Newsletter"
+        accepted: "Aceptado"
+  newsletter_mailer:
+    automatic_answer:
+      thank_you_for_newsletter: "Gracias por el newslettero contigo"  
+  mailers:
+    newsletter_mailer:
+      automatic_answer:
+        hi: "Hola"  
+        thank_you_for_message: "Gracias por tu mensaje"
+        we_will_respond_as_soon_as_possible: "Le responderemos lo antes posible"
+        fail_send_your_message: "No enviar su mensaje"
+        try_again_later: "Inténtalo de nuevo más tarde"
+        go_back: "Regresa"

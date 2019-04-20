@@ -5,6 +5,7 @@ RSpec.describe "newsletters/show", type: :view do
     @newsletter = assign(:newsletter, Newsletter.create!(
       :name => "Name",
       :email => "Email",
+      :accepted => false,
       :inactive => false
     ))
   end
@@ -13,6 +14,7 @@ RSpec.describe "newsletters/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Email/)
+    expect(rendered).to match(/false/)
     expect(rendered).to match(/false/)
   end
 end

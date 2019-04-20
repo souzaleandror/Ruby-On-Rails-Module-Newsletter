@@ -1,0 +1,19 @@
+<%= content_for(:title, t('.cancel_newsletter')) %>
+
+<%= form_with(model: @newsletter, url: home_destroy_newsletter_path, local: true, class: '', html: { id: 'form_newsletter', method: :post }) do |f| %>
+  
+  <h1 class="m_top_10"><%= t('.cancel_newsletter') %></h1>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= f.label :email, class: "required_colon" %><br />
+    <%= f.email_field :email, class: 'form-control lower_case', placeholder: t('.p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_newsletter_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 1 %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%#= recaptcha_tags %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= f.submit t('.send'), class: "btn btn-info btn-lg btn-block", tabindex: 2 %>
+  </div>
+<% end %>

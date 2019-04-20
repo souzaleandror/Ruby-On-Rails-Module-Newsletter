@@ -1,0 +1,41 @@
+# encoding: utf-8
+fr:
+  home:
+    index:
+      newsletter: "newsletter"
+      p_name: "Name"
+      p_email: "Email"
+      p_phone: "Phone"
+      p_subject: "Subject"
+      p_message: "Message"
+      register_newsletter: "Register Newsletter"
+      accepted: "Accepted"
+      term_newsletter: "Term newsletter"
+      send: "Send"
+    create_newsletter:
+      thank_you_for_message: "Thank You For Message"
+      we_will_respond_as_soon_as_possible: "We will respond as soon as possible"
+      fail_send_your_message: "Fail Send Your Message"
+      try_again_later: "Try Again Later"
+  helpers:
+    label:
+      newsletter:
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        subject: "Subject"
+        message: "Message"
+        newsletter: "Newsletter"
+        accepted: "Accepted"
+  newsletter_mailer:
+    automatic_answer:
+      thank_you_for_newsletter: "Thank You For newsletter"  
+  mailers:
+    newsletter_mailer:
+      automatic_answer:
+        hi: "Hi"
+        thank_you_for_newsletter: "Thank You For newsletter"
+        we_will_respond_as_soon_as_possible: "We will respond as soon as possible"
+        fail_send_your_message: "Fail Send Your Message"
+        try_again_later: "Try Again Later"
+        go_back: "Go Back"

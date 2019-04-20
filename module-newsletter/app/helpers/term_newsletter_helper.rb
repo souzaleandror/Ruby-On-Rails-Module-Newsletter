@@ -1,0 +1,2 @@
+module TermNewsletterHelper
+end

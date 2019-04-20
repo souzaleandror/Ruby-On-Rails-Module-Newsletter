@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ModuleNewsletter</title>
+    <% if content_for?(:title) %>
+      <title>Module Newsletter - <%= yield :title %></title>
+    <% else %>
+      <title>Module Newsletter</title>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +14,59 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+      <a class="navbar-brand" href="/">Our Logo</a>
+      <form class="form-inline">
+        <% if (admin_signed_in?) %>
+          <%= link_to "Newsletters", newsletters_path, class: 'btn btn-outline-primary m_left_5' %>
+          <%= link_to "Welcome Admin", welcome_index_path, class: 'btn btn-outline-primary m_left_5' %>
+          <%= link_to "Logout", destroy_admin_session_path, class: 'btn btn-outline-primary m_left_5', method: :delete %>
+        <% else %>
+          <%= link_to "Cancel Newsletter", home_cancel_newsletter_path, class: 'btn btn-outline-danger m_right_5' %>
+          <%= link_to "Login", new_admin_session_path, class: 'btn btn-outline-primary' %>
+        <% end %>
+        <!--<div style="padding-left: 10px;">-->
+        <!--  <a class="btn btn-outline-success" href="/signup" role="button">-->
+        <!--  Sign Up-->
+        <!--  </a>-->
+        <!--</div>-->
+      </form>
+      </div>
+    </nav>
+    <section id="sessions" class="section ">
+      <div class="container text-center">
+        <%= select('idiom', 'idiom_id', $LOCALES, {include_blank: (t('select') + ' ' + t('language')), :selected => "/#{params[:locale]}"}, class: 'm_top_10', id: 'select_language_website') %>
+        <%= yield %>
+      </div>
+    </section>
+    
+        <script type="text/javascript">
+      
+      jQuery(document).ready(function() {
+          
+          $("#select_language_website").change(function(){
+        		var url = $(this).val();
+        		if (url) {
+        			window.location = url;
+        		}
+        		return false;
+          });
+          
+          // Flash Messages
+          $(function(){
+            var notice = "<%= flash[:notice] %>"
+             $.notify(notice, "success" );
+             
+            var error = "<%= flash[:error] %>"
+            $.notify(error, "error" );
+             
+            var alerta = "<%= flash[:alert] %>"
+            $.notify(alerta, "warn" );
+          });
+          
+      });
+      
+      </script>
   </body>
 </html>

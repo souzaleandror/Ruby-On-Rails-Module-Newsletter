@@ -2,11 +2,12 @@
 
 <h1>Newsletters</h1>
 
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>Accepted</th>
       <th>Inactive</th>
       <th colspan="3"></th>
     </tr>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= newsletter.name %></td>
         <td><%= newsletter.email %></td>
+        <td><%= newsletter.accepted %></td>
         <td><%= newsletter.inactive %></td>
         <td><%= link_to 'Show', newsletter %></td>
         <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>

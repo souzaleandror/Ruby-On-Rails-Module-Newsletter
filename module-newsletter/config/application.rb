@@ -21,6 +21,17 @@ module ModuleNewsletter
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    
+    config.i18n.available_locales = ['en','it','es','de','pt','fr']
+    config.i18n.default_locale = :en
+    config.i18n.enforce_available_locales = true
+    config.i18n.fallbacks = true
+    config.time_zone = 'Eastern Time (US & Canada)'
+    config.encoding = "UTF-8"
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    # Faker::Config.locale = 'en'
+    config.assets.enabled = true
+    config.assets.version = '1.0'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

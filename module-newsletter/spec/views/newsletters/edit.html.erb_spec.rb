@@ -5,6 +5,7 @@ RSpec.describe "newsletters/edit", type: :view do
     @newsletter = assign(:newsletter, Newsletter.create!(
       :name => "MyString",
       :email => "MyString",
+      :accepted => false,
       :inactive => false
     ))
   end
@@ -17,6 +18,8 @@ RSpec.describe "newsletters/edit", type: :view do
       assert_select "input[name=?]", "newsletter[name]"
 
       assert_select "input[name=?]", "newsletter[email]"
+
+      assert_select "input[name=?]", "newsletter[accepted]"
 
       assert_select "input[name=?]", "newsletter[inactive]"
     end
