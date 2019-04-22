@@ -7,11 +7,12 @@ class HomeController < ApplicationController
   
   def create_newsletter
     @newsletter = Newsletter.new(newsletter_params)   
+    @newsletter.update(:inactive => false)
     
     respond_to do |format|
       if @newsletter.save
         NewsletterMailer.automatic_answer(@newsletter).deliver
-        format.html { redirect_to root_path, notice: "#{t('.thank_you_for_message')} \\n #{t('.we_will_respond_as_soon_as_possible')}" }
+        format.html { redirect_to root_path, notice: "#{t('.thank_you_for_registration_newsletter')} \\n #{t('.we_will_send_you_news_soon')}" }
       else
         flash[:error] = "Your Message Not Send Was Successfully. Try again."
         format.html { redirect_to root_path }
@@ -26,6 +27,7 @@ class HomeController < ApplicationController
   def destroy_newsletter
     respond_to do |format|
       if @newsletter.present? then
+        NewsletterMailer.cancel_newsletter(@newsletter).deliver
         @newsletter.destroy
         format.html { redirect_to root_path, notice: 'Newsletter was successfully destroyed.' }
       else 
