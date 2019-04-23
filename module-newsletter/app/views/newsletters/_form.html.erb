@@ -11,27 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :name, class: "required_colon" %><br />
+    <%= form.text_field :name, class: 'form-control', placeholder: t('.p_name'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_newsletter_name', 'data-purpose' => 'name', 'aria-invalid' => 'true', autofocus: true, tabindex: 1 %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :email, class: "required_colon" %><br />
+    <%= form.email_field :email, class: 'form-control lower_case', placeholder: t('.p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_newsletter_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2 %>
   </div>
 
-  <div class="field">
-    <%= form.label :accepted %>
-    <%= form.check_box :accepted %>
+  <div class="row m_top_10 col-md-3 mx-auto text-center ">
+    <%= form.check_box :inactive, class: 'form-check-input', required: true, checked: 'checked', id: 'form_register_terms_and_privacy', tabindex: 3 %>
+    <label class="form-check-label b_required" for="form_register_terms_and_privacy">
+      <%= t('.accepted') %> 
+      <%= link_to t('.term_newsletter'), term_newsletter_index_path %> 
+    </label>
   </div>
-
-  <div class="field">
-    <%= form.label :inactive %>
-    <%= form.check_box :inactive %>
+  
+  <div class="row m_top_10 col-md-3 mx-auto text-center ">
+    <%= form.check_box :inactive, class: 'form-check-input', required: true, checked: 'checked', id: 'form_register_terms_and_privacy', tabindex: 3 %>
+    <label class="form-check-label b_required" for="form_register_terms_and_privacy">
+      <%= t('.inactive') %> 
+    </label>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.submit t('.send'), class: "btn btn-info btn-lg btn-block", tabindex: 4 %>
   </div>
+  
+  
 <% end %>

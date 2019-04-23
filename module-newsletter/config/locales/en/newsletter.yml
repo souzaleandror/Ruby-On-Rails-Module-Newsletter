@@ -1,8 +1,23 @@
 # encoding: utf-8
 en:
+  admins:
+    sessions:
+      new:
+        login: "Login"
+        p_email: "Email"
+        p_password: "Password"
   term_newsletter:
     index:
       term_newsletter: "Term Newsletter"
+  newsletters:
+    form:
+      p_name: "Name"
+      p_email: "Email"
+      register_newsletter: "Register Newsletter"
+      accepted: "Accepted"
+      inactive: "Inactive"
+      term_newsletter: "Term newsletter"
+      send: "Send" 
   home:
     index:
       newsletter: "newsletter"

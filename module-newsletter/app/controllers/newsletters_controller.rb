@@ -1,6 +1,13 @@
 class NewslettersController < ApplicationController
   before_action :authenticate_admin!
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
+  
+  def send_newsletter
+  end
+  
+  def send_email_newsletter
+    
+  end
 
   # GET /newsletters
   # GET /newsletters.json
@@ -71,5 +78,9 @@ class NewslettersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def newsletter_params
       params.require(:newsletter).permit(:name, :email, :accepted, :inactive)
+    end
+    
+    def newsletter_params
+      params.require(:newsletter).permit(:subject, :body)
     end
 end

@@ -17,6 +17,7 @@ production.rb<br>
 test.rb<br>
 In Gmail Account to enable 'Less secure APP' in 'Google's Account' => Security<br>
 If you don't config your Gmail's Account don't work send the emails.<br>
+After access: https://accounts.google.com/b/0/DisplayUnlockCaptcha and Disabled Captcha.<br>
 
 Command for you use:<br>
 $ sudo service postgresql start <br>

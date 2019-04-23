@@ -1,0 +1,16 @@
+<%= form_with url: newsletters_send_email_newsletter_path do |form| %>
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :subject, class: "required_colon" %><br />
+    <%= form.text_field :subject, class: 'form-control', placeholder: t('.p_subject'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_newsletter_subject', 'data-purpose' => 'name', 'aria-invalid' => 'true', autofocus: true, tabindex: 1 %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :body, class: "required_colon" %><br />
+    <%= form.text_area :body, class: 'form-control lower_case', placeholder: t('.p_body'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_newsletter_body', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2 %>
+  </div>
+  
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.submit t('.send'), class: "btn btn-info btn-lg btn-block", tabindex: 4 %>
+  </div>
+  
+<% end %>

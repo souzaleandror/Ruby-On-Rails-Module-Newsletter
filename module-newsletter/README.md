@@ -1,24 +1,57 @@
-# README
+# Ruby-On-Rails-Module-Newsletter<br>
+Simple Module Newsletter for send Email All Records Register in Newsletter in your App.<br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project Newsletter<br>
+Simple Newsletter Form With Validation and I18n.<br>
+Send Email All Records Register in System with specific idiom.<br>
 
-Things you may want to cover:
+Heroku (Live Demo):<br>
+https://module-newsletter.herokuapp.com/<br>
 
-* Ruby version
+I18n available's languages: |en|de|es|it|pt|fr|<br>
+Send Email with SMTP (Gmail).<br>
 
-* System dependencies
+** IMPORTANT CONFIG YOUR EMAIL **<br>
+development.rb<br>
+production.rb<br>
+test.rb<br>
+In Gmail Account to enable 'Less secure APP' in 'Google's Account' => Security<br>
+If you don't config your Gmail's Account don't work send the emails.<br>
+After access: https://accounts.google.com/b/0/DisplayUnlockCaptcha and Disabled Captcha.<br>
 
-* Configuration
+Command for you use:<br>
+$ sudo service postgresql start <br>
+$ cd module-newsletter<br>
+$ bundle update<br>
+$ bundle install<br>
+$ rake db:drop db:create db:migrate db:seed<br>
+$ rails s or rails s -p $PORT -b $IP<br>
 
-* Database creation
+Access your browser: http://0.0.0.0:8080 or http://localhost:8080<br>
+For test send email preview: http://localhost:8080/rails/mailers/contact<br>
 
-* Database initialization
+Admin's Area:<br>
+Login: demo@demo.com<br>
+Password: demo123<br>
 
-* How to run the test suite
+Ruby Version:<br>
+Ruby 2.4.5p335 (2018-10-18 revision 65137) [x86_64-linux]<br>
 
-* Services (job queues, cache servers, search engines, etc.)
+Rails Version:<br>
+Rails 5.2.3<br>
 
-* Deployment instructions
+PostGres Version :<br>
+(PostgreSQL) 9.3.18<br>
 
-* ...
+Gem's used:<br>
+I18n<br>
+Thin<br>
+Devise (Login)<br>
+Globalize<br>
+Faker<br>
+Rspec<br>
+Bootstrap 4<br>
+
+sudo service postgresql start<br>
+rails s -p $PORT -b $IP <br>
+heroku restart; heroku pg:reset DATABASE --confirm APP-NAME; heroku run rake db:migrate; heroku run rake db:seed; <br>
