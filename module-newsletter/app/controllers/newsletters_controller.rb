@@ -3,10 +3,20 @@ class NewslettersController < ApplicationController
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
   
   def send_newsletter
+    @newsletter = Newsletter.new
   end
   
   def send_email_newsletter
+    @newsletter = send_email_newsletter_params
+
+    Newsletter.where(inactive: false).each do |n|
+      NewsletterMailer.send_email_newsletter(n.name, n.email, @newsletter[:subject], @newsletter[:body]).deliver
+    end
     
+    respond_to do |format|
+      format.html { redirect_to newsletters_url, notice: 'Newsletter Send successfully.' }
+      # format.json { head :no_content }
+    end
   end
 
   # GET /newsletters
@@ -80,7 +90,7 @@ class NewslettersController < ApplicationController
       params.require(:newsletter).permit(:name, :email, :accepted, :inactive)
     end
     
-    def newsletter_params
+    def send_email_newsletter_params
       params.require(:newsletter).permit(:subject, :body)
     end
 end

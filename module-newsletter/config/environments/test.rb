@@ -43,4 +43,27 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+    # ActionMailer Config in development/production rb file
+  config.action_mailer.default_url_options = { :host => 'https://module-newsletter-ricksalvezz.c9users.io/' }
+  config.action_mailer.delivery_method = :smtp
+  # change to true to allow email to be sent during development
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+
+  #config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
+  #config.action_mailer.preview_path = "#{Rails.root}/test/mailers/previews"
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
+ 
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "mail.google.com",####important
+    authentication: "plain",
+    enable_starttls_auto: true,
+    from: 'YOUR_EMAIL',
+    user_name:      'YOUR_EMAIL',
+    password:       'YOUR_PASSWORD'
+  }
 end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get 'home/index'
     get 'welcome/index'
     get 'newsletters/send_newsletter'
-    get 'newsletters/send_email_newsletter'
+    post 'newsletters/send_email_newsletter'
     resources :newsletters
     
     devise_for :admins, 
