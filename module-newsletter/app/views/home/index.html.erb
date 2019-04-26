@@ -14,7 +14,7 @@
     <%= f.email_field :email, class: 'form-control lower_case', placeholder: t('.p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_newsletter_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2 %>
   </div>
 
-  <div class="row m_top_10 col-md-3 mx-auto text-center ">
+  <div class="row m_top_10 col-md-3 mx-auto text-center">
     <%= f.check_box :accepted, class: 'form-check-input', required: true, checked: 'checked', id: 'form_register_terms_and_privacy', tabindex: 3 %>
     <label class="form-check-label b_required" for="form_register_terms_and_privacy">
       <%= t('.accepted') %> 

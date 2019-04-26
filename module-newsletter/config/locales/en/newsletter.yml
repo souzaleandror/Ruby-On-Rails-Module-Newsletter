@@ -10,6 +10,10 @@ en:
     index:
       term_newsletter: "Term Newsletter"
   newsletters:
+    send_newsletter:
+      p_subject: "Subject"
+      p_body: "Body"
+      send: "Send"
     form:
       p_name: "Name"
       p_email: "Email"

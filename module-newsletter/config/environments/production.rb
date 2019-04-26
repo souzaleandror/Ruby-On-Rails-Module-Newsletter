@@ -105,7 +105,6 @@ Rails.application.configure do
     domain: "mail.google.com",####important
     authentication: "plain",
     enable_starttls_auto: true,
-    from: 'YOUR_EMAIL',
     user_name:      'YOUR_EMAIL',
     password:       'YOUR_PASSWORD'
   }

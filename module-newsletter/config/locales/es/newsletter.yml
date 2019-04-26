@@ -1,5 +1,27 @@
 # encoding: utf-8
 es:
+  admins:
+    sessions:
+      new:
+        login: "Login"
+        p_email: "Email"
+        p_password: "Password"
+  term_newsletter:
+    index:
+      term_newsletter: "Term Newsletter"
+  newsletters:
+    send_newsletter:
+      p_subject: "Subject"
+      p_body: "Body"
+      send: "Send"
+    form:
+      p_name: "Name"
+      p_email: "Email"
+      register_newsletter: "Register Newsletter"
+      accepted: "Accepted"
+      inactive: "Inactive"
+      term_newsletter: "Term newsletter"
+      send: "Send" 
   home:
     index:
       newsletter: "Contat"
@@ -30,6 +52,8 @@ es:
   newsletter_mailer:
     automatic_answer:
       thank_you_for_newsletter: "Gracias por el newslettero contigo"  
+    cancel_newsletter:
+      cancel_newsletter: "Cancel Newsletter"
   mailers:
     newsletter_mailer:
       automatic_answer:
@@ -39,3 +63,7 @@ es:
         fail_send_your_message: "No enviar su mensaje"
         try_again_later: "Inténtalo de nuevo más tarde"
         go_back: "Regresa"
+      cancel_newsletter:
+        cancel_newsletter: "Cancel Newsletter"
+        hope_your_visit_soon_again: "Hope your visit soon again"
+        go_back: "Go Back"
